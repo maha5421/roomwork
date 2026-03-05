@@ -41,18 +41,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-          <Link
-            href="/"
-            className="flex shrink-0 items-center gap-2 rounded bg-neutral-900 px-3 py-2 pr-4"
-          >
+          <Link href="/" className="flex shrink-0 items-center">
             <Image
               src="/logo.png"
-              alt=""
-              width={32}
-              height={32}
-              className="shrink-0"
+              alt="RoomWork"
+              width={160}
+              height={40}
+              className="h-9 w-auto object-contain sm:h-10"
             />
-            <span className="text-base font-semibold text-white">RoomWork</span>
           </Link>
 
           <form onSubmit={handleSearch} className="flex flex-1 flex-wrap items-center gap-2 min-w-0">
