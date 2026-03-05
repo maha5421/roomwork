@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-[calc(100vh-4rem)]">
+    <main className="min-h-[calc(100vh-4rem)] bg-white">
       {/* Hero */}
-      <section className="border-b border-neutral-200 bg-neutral-50/50">
+      <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <h1 className="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
             Кабинеты для работы по часам в Москве
@@ -21,7 +21,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/add"
-              className="inline-flex rounded-full border border-neutral-400 px-6 py-3 text-sm font-medium text-neutral-800 hover:bg-neutral-100"
+              className="inline-flex rounded-full border-2 border-neutral-700 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-100"
             >
               Разместить кабинет
             </Link>
@@ -29,8 +29,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      {/* How it works — всегда светлый фон */}
+      <section className="bg-white px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl font-semibold tracking-tight text-neutral-900">
           Как это работает
         </h2>
@@ -57,10 +58,11 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="border-t border-neutral-200 bg-neutral-50/50">
+      <section className="border-t border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
           <p className="text-center text-neutral-800">
             Размещение кабинета бесплатно.{" "}
