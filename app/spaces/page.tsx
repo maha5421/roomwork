@@ -42,7 +42,7 @@ function SpacesContent() {
         query = query.order("price_per_hour", { ascending: true });
         break;
       case "rating_desc":
-        query = query.order("is_promoted", { ascending: false }).order("created_at", { ascending: false });
+        query = query.order("average_rating", { ascending: false }).order("created_at", { ascending: false });
         break;
       default:
         query = query.order("is_promoted", { ascending: false }).order("created_at", { ascending: false });
@@ -114,7 +114,7 @@ function SpacesContent() {
           >
             <option value="recommended">Рекомендуемые</option>
             <option value="price_asc">Сначала дешевле</option>
-            <option value="rating_desc">Новые</option>
+            <option value="rating_desc">По рейтингу</option>
           </select>
         </div>
 
@@ -152,7 +152,16 @@ function SpacesContent() {
                   </div>
                   <div className="p-4">
                     <p className="font-semibold text-neutral-900">{space.title}</p>
-                    <p className="mt-1 text-sm text-neutral-800">{space.metro}</p>
+                    <p className="mt-1 text-sm text-neutral-800">
+                      м. {space.metro}
+                      {(space.reviews_count ?? 0) > 0 ? (
+                        <span className="ml-2 text-neutral-700">
+                          ★ {Number(space.average_rating ?? 0).toFixed(1)} ({space.reviews_count})
+                        </span>
+                      ) : (
+                        <span className="ml-2 text-neutral-500">· Пока нет отзывов</span>
+                      )}
+                    </p>
                     <p className="mt-2 text-lg font-semibold text-neutral-900">
                       {space.price_per_hour} ₽/час
                     </p>

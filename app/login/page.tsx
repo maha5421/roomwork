@@ -15,16 +15,24 @@ export default function LoginPage() {
     setLoading(true);
     setMsg(null);
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
 
-    setLoading(false);
-
-    if (error) {
-      setMsg(error.message);
-      return;
+      if (error) {
+        setMsg(error.message);
+        setLoading(false);
+        return;
+      }
+      window.location.href = "/";
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      setMsg(
+        message.includes("fetch") || message.includes("Load failed")
+          ? "Не удалось подключиться к серверу. Проверь интернет. Если сайт на Vercel — добавь NEXT_PUBLIC_SUPABASE_URL и NEXT_PUBLIC_SUPABASE_ANON_KEY в настройках проекта."
+          : message
+      );
+      setLoading(false);
     }
-
-    window.location.href = "/";
   }
 
   return (

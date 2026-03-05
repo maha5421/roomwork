@@ -15,7 +15,9 @@ CREATE TABLE IF NOT EXISTS public.spaces (
   images text[] DEFAULT '{}',
   phone text,
   created_at timestamptz NOT NULL DEFAULT now(),
-  is_promoted boolean NOT NULL DEFAULT false
+  is_promoted boolean NOT NULL DEFAULT false,
+  average_rating numeric(3,2) NOT NULL DEFAULT 0,
+  reviews_count int NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS public.reviews (
@@ -77,3 +79,30 @@ CREATE POLICY "reviews_insert_authenticated"
 -- При необходимости: UPDATE/DELETE своих отзывов (раскомментировать)
 -- CREATE POLICY "reviews_update_own" ON public.reviews FOR UPDATE TO authenticated USING (auth.uid() = user_id);
 -- CREATE POLICY "reviews_delete_own" ON public.reviews FOR DELETE TO authenticated USING (auth.uid() = user_id);
+
+-- ========== Рейтинг: обновление average_rating и reviews_count у space при изменении отзывов ==========
+CREATE OR REPLACE FUNCTION public.update_space_rating()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF TG_OP = 'DELETE' THEN
+    UPDATE public.spaces
+    SET
+      reviews_count = (SELECT count(*) FROM public.reviews WHERE space_id = OLD.space_id),
+      average_rating = coalesce((SELECT round(avg(rating)::numeric, 2) FROM public.reviews WHERE space_id = OLD.space_id), 0)
+    WHERE id = OLD.space_id;
+    RETURN OLD;
+  ELSE
+    UPDATE public.spaces
+    SET
+      reviews_count = (SELECT count(*) FROM public.reviews WHERE space_id = NEW.space_id),
+      average_rating = coalesce((SELECT round(avg(rating)::numeric, 2) FROM public.reviews WHERE space_id = NEW.space_id), 0)
+    WHERE id = NEW.space_id;
+    RETURN NEW;
+  END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+DROP TRIGGER IF EXISTS trigger_update_space_rating ON public.reviews;
+CREATE TRIGGER trigger_update_space_rating
+  AFTER INSERT OR UPDATE OR DELETE ON public.reviews
+  FOR EACH ROW EXECUTE FUNCTION update_space_rating();

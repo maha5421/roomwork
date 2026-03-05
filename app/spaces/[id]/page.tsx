@@ -78,7 +78,16 @@ export default function SpaceDetailPage() {
         <h1 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-900">
           {space.title}
         </h1>
-        <p className="mt-1 text-neutral-800">{space.metro}</p>
+        <p className="mt-1 text-neutral-800">
+          м. {space.metro}
+          {(space.reviews_count ?? 0) > 0 ? (
+            <span className="ml-2 font-medium text-neutral-700">
+              ★ {Number(space.average_rating ?? 0).toFixed(1)} ({space.reviews_count} отзывов)
+            </span>
+          ) : (
+            <span className="ml-2 text-neutral-500">Пока нет отзывов</span>
+          )}
+        </p>
         <p className="mt-2 text-2xl font-semibold text-neutral-900">
           {space.price_per_hour} ₽/час
         </p>

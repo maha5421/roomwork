@@ -11,6 +11,8 @@ export interface Space {
   phone: string | null;
   created_at: string;
   is_promoted: boolean;
+  average_rating?: number;
+  reviews_count?: number;
 }
 
 export interface Review {
