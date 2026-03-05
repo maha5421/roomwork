@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { supabase, getUser } from "@/lib/supabaseClient";
 import type { User } from "@supabase/supabase-js";
@@ -42,9 +43,16 @@ export default function Header() {
         <div className="flex flex-wrap items-center gap-3 sm:gap-4">
           <Link
             href="/"
-            className="flex shrink-0 items-center justify-center rounded bg-neutral-900 px-4 py-2.5 text-base font-semibold text-white"
+            className="flex shrink-0 items-center gap-2 rounded bg-neutral-900 px-3 py-2 pr-4"
           >
-            RoomWork
+            <Image
+              src="/logo.png"
+              alt=""
+              width={32}
+              height={32}
+              className="shrink-0"
+            />
+            <span className="text-base font-semibold text-white">RoomWork</span>
           </Link>
 
           <form onSubmit={handleSearch} className="flex flex-1 flex-wrap items-center gap-2 min-w-0">
