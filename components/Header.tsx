@@ -7,6 +7,10 @@ import { useRouter } from "next/navigation";
 import { supabase, getUser } from "@/lib/supabaseClient";
 import type { User } from "@supabase/supabase-js";
 
+// Размер логотипа в шапке — поменяй под свой файл (ширина × высота в пикселях)
+const LOGO_WIDTH = 220;
+const LOGO_HEIGHT = 55;
+
 export default function Header() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
@@ -41,13 +45,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-          <Link href="/" className="flex shrink-0 items-center">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center rounded-md bg-white px-2 py-1.5"
+          >
             <Image
               src="/logo.png"
               alt="RoomWork"
-              width={160}
-              height={40}
-              className="h-9 w-auto object-contain sm:h-10"
+              width={LOGO_WIDTH}
+              height={LOGO_HEIGHT}
+              className="h-auto w-auto object-contain"
+              style={{ height: LOGO_HEIGHT, width: "auto" }}
             />
           </Link>
 
