@@ -50,7 +50,7 @@ export default function Header() {
             className="flex shrink-0 items-center rounded-md bg-white px-2 py-1.5"
           >
             <Image
-              src="/logo.png"
+              src="/logo.png?v=2"
               alt="RoomWork"
               width={LOGO_WIDTH}
               height={LOGO_HEIGHT}
