@@ -35,27 +35,27 @@ export default function Header() {
         <nav className="flex items-center gap-3">
           <Link
             href="/spaces"
-            className="rounded-full px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100"
+            className="rounded-full px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-100"
           >
             Каталог
           </Link>
           {loading ? (
-            <span className="text-sm text-neutral-400">...</span>
+            <span className="text-sm text-neutral-600">...</span>
           ) : user ? (
             <>
               <Link
                 href="/add"
-                className="rounded-full px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100"
+                className="rounded-full px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-100"
               >
                 Разместить
               </Link>
-              <span className="max-w-[160px] truncate text-sm text-neutral-600" title={user.email ?? ""}>
+              <span className="max-w-[160px] truncate text-sm text-neutral-800" title={user.email ?? ""}>
                 {user.email}
               </span>
               <button
                 type="button"
                 onClick={handleLogout}
-                className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+                className="rounded-full border border-neutral-400 px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-50"
               >
                 Выйти
               </button>
@@ -64,7 +64,7 @@ export default function Header() {
             <>
               <Link
                 href="/login"
-                className="rounded-full px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100"
+                className="rounded-full px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-100"
               >
                 Войти
               </Link>

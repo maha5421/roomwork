@@ -9,7 +9,7 @@ export default function HomePage() {
           <h1 className="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
             Кабинеты для работы по часам в Москве
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-neutral-600">
+          <p className="mt-4 max-w-2xl text-lg text-neutral-800">
             Найди тихий кабинет рядом с метро или размести свой — бесплатно.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -21,7 +21,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/add"
-              className="inline-flex rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+              className="inline-flex rounded-full border border-neutral-400 px-6 py-3 text-sm font-medium text-neutral-800 hover:bg-neutral-100"
             >
               Разместить кабинет
             </Link>
@@ -38,21 +38,21 @@ export default function HomePage() {
           <div>
             <div className="text-3xl font-semibold text-neutral-900">1</div>
             <h3 className="mt-2 font-medium text-neutral-900">Выбери кабинет</h3>
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-1 text-sm text-neutral-800">
               Фильтруй по метро, цене и удобствам. Смотри фото и описание.
             </p>
           </div>
           <div>
             <div className="text-3xl font-semibold text-neutral-900">2</div>
             <h3 className="mt-2 font-medium text-neutral-900">Свяжись с владельцем</h3>
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-1 text-sm text-neutral-800">
               Нажми «Показать телефон» и договорись о времени и оплате.
             </p>
           </div>
           <div>
             <div className="text-3xl font-semibold text-neutral-900">3</div>
             <h3 className="mt-2 font-medium text-neutral-900">Работай в тишине</h3>
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-1 text-sm text-neutral-800">
               Приходи в назначенное время и работай без отвлечений.
             </p>
           </div>
@@ -62,9 +62,9 @@ export default function HomePage() {
       {/* CTA */}
       <section className="border-t border-neutral-200 bg-neutral-50/50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-          <p className="text-center text-neutral-600">
+          <p className="text-center text-neutral-800">
             Размещение кабинета бесплатно.{" "}
-            <Link href="/add" className="font-medium text-neutral-900 underline hover:no-underline">
+            <Link href="/add" className="font-semibold text-neutral-900 underline hover:no-underline">
               Добавить кабинет
             </Link>
           </p>

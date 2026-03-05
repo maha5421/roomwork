@@ -47,8 +47,8 @@ export default function SpaceDetailPage() {
 
   if (loading) {
     return (
-      <main className="min-h-[calc(100vh-4rem)] bg-neutral-50/50 flex items-center justify-center">
-        <p className="text-neutral-500">Загрузка...</p>
+      <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-neutral-50/50">
+        <p className="text-neutral-700">Загрузка...</p>
       </main>
     );
   }
@@ -58,7 +58,7 @@ export default function SpaceDetailPage() {
       <main className="min-h-[calc(100vh-4rem)] bg-neutral-50/50">
         <div className="mx-auto max-w-3xl px-4 py-12 text-center">
           <h1 className="text-xl font-semibold text-neutral-900">Кабинет не найден</h1>
-          <Link href="/spaces" className="mt-4 inline-block text-neutral-600 underline hover:no-underline">
+          <Link href="/spaces" className="mt-4 inline-block text-neutral-800 underline hover:no-underline">
             Вернуться в каталог
           </Link>
         </div>
@@ -71,14 +71,14 @@ export default function SpaceDetailPage() {
   return (
     <main className="min-h-[calc(100vh-4rem)] bg-neutral-50/50">
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-        <Link href="/spaces" className="text-sm text-neutral-600 hover:text-neutral-900">
+        <Link href="/spaces" className="text-sm text-neutral-800 hover:text-neutral-900">
           ← Каталог
         </Link>
 
         <h1 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-900">
           {space.title}
         </h1>
-        <p className="mt-1 text-neutral-600">{space.metro}</p>
+        <p className="mt-1 text-neutral-800">{space.metro}</p>
         <p className="mt-2 text-2xl font-semibold text-neutral-900">
           {space.price_per_hour} ₽/час
         </p>
@@ -112,7 +112,7 @@ export default function SpaceDetailPage() {
               </div>
             )
           ) : (
-            <div className="flex aspect-[16/10] items-center justify-center text-neutral-400">
+            <div className="flex aspect-[16/10] items-center justify-center text-neutral-600">
               Нет фото
             </div>
           )}
@@ -123,7 +123,7 @@ export default function SpaceDetailPage() {
             {space.tags.map((t) => (
               <span
                 key={t}
-                className="rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-700"
+                className="rounded-full bg-neutral-200 px-3 py-1 text-sm text-neutral-800"
               >
                 {t}
               </span>
@@ -134,14 +134,14 @@ export default function SpaceDetailPage() {
         {space.description ? (
           <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-6">
             <h2 className="font-medium text-neutral-900">Описание</h2>
-            <p className="mt-2 whitespace-pre-wrap text-neutral-600">{space.description}</p>
+            <p className="mt-2 whitespace-pre-wrap text-neutral-800">{space.description}</p>
           </div>
         ) : null}
 
         <div className="mt-6 flex flex-wrap gap-3">
           {space.phone ? (
             <div className="rounded-2xl border border-neutral-200 bg-white px-6 py-4">
-              <p className="text-sm font-medium text-neutral-700">Телефон</p>
+              <p className="text-sm font-medium text-neutral-800">Телефон</p>
               {showPhone ? (
                 <a href={`tel:${space.phone}`} className="mt-1 block text-lg font-semibold text-neutral-900">
                   {space.phone}
@@ -159,7 +159,7 @@ export default function SpaceDetailPage() {
                 <button
                   type="button"
                   onClick={() => setShowPhone(true)}
-                  className="mt-2 text-sm font-medium text-neutral-600 underline hover:no-underline"
+                  className="mt-2 text-sm font-medium text-neutral-800 underline hover:no-underline"
                 >
                   Показать телефон
                 </button>
@@ -167,7 +167,7 @@ export default function SpaceDetailPage() {
             </div>
           ) : null}
           {isAuth ? (
-            <span className="inline-flex rounded-xl border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-500">
+            <span className="inline-flex rounded-xl border border-neutral-400 px-6 py-3 text-sm font-medium text-neutral-700">
               Скоро будет чат
             </span>
           ) : (
@@ -179,7 +179,7 @@ export default function SpaceDetailPage() {
             </Link>
           )}
         </div>
-        {!isAuth && <p className="mt-2 text-sm text-neutral-500">Войди, чтобы написать владельцу. Чат в разработке.</p>}
+        {!isAuth && <p className="mt-2 text-sm text-neutral-700">Войди, чтобы написать владельцу. Чат в разработке.</p>}
       </div>
     </main>
   );

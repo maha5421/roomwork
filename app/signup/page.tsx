@@ -33,7 +33,7 @@ export default function SignUpPage() {
         <h1 className="text-2xl font-semibold tracking-tight text-neutral-900">
           Регистрация
         </h1>
-        <p className="mt-1 text-sm text-neutral-600">
+        <p className="mt-1 text-sm text-neutral-800">
           Создай аккаунт, чтобы размещать кабинеты и связываться с владельцами.
         </p>
 
@@ -42,7 +42,7 @@ export default function SignUpPage() {
           className="mt-8 space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
         >
           <div>
-            <label htmlFor="signup-email" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="signup-email" className="block text-sm font-medium text-neutral-800">
               Email
             </label>
             <input
@@ -57,7 +57,7 @@ export default function SignUpPage() {
           </div>
 
           <div>
-            <label htmlFor="signup-password" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="signup-password" className="block text-sm font-medium text-neutral-800">
               Пароль
             </label>
             <input
@@ -86,9 +86,9 @@ export default function SignUpPage() {
             </div>
           )}
 
-          <p className="text-center text-sm text-neutral-600">
+          <p className="text-center text-sm text-neutral-800">
             Уже есть аккаунт?{" "}
-            <Link href="/login" className="font-medium text-neutral-900 hover:underline">
+            <Link href="/login" className="font-semibold text-neutral-900 hover:underline">
               Войти
             </Link>
           </p>

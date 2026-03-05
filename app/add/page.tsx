@@ -118,7 +118,7 @@ export default function AddSpacePage() {
           className="mt-8 space-y-5 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
         >
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="title" className="block text-sm font-medium text-neutral-800">
               Название *
             </label>
             <input
@@ -132,7 +132,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label htmlFor="metro" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="metro" className="block text-sm font-medium text-neutral-800">
               Станция метро *
             </label>
             <input
@@ -146,7 +146,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label htmlFor="price_per_hour" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="price_per_hour" className="block text-sm font-medium text-neutral-800">
               Цена за час (₽) *
             </label>
             <input
@@ -162,7 +162,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="description" className="block text-sm font-medium text-neutral-800">
               Описание
             </label>
             <textarea
@@ -175,7 +175,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="phone" className="block text-sm font-medium text-neutral-800">
               Телефон для связи
             </label>
             <input
@@ -188,7 +188,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label htmlFor="tags" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="tags" className="block text-sm font-medium text-neutral-800">
               Теги (через запятую)
             </label>
             <input
@@ -200,7 +200,7 @@ export default function AddSpacePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-neutral-700">
+            <label className="block text-sm font-medium text-neutral-800">
               Фото (URL, до 3 шт.)
             </label>
             <input
@@ -245,7 +245,7 @@ export default function AddSpacePage() {
             </button>
             <Link
               href="/spaces"
-              className="rounded-xl border border-neutral-300 px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+              className="rounded-xl border border-neutral-300 px-4 py-3 text-sm font-medium text-neutral-800 hover:bg-neutral-50"
             >
               Отмена
             </Link>

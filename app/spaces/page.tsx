@@ -88,7 +88,7 @@ function SpacesContent() {
             defaultValue={q}
             key={`q-${q}`}
             onChange={(e) => updateFilters({ q: e.target.value.trim() })}
-            className="w-48 rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-400"
+            className="w-48 rounded-xl border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none placeholder:text-neutral-600 focus:border-neutral-500"
           />
           <input
             type="number"
@@ -97,7 +97,7 @@ function SpacesContent() {
             defaultValue={max || undefined}
             key={`max-${max}`}
             onChange={(e) => updateFilters({ max: e.target.value.trim() })}
-            className="w-28 rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-400"
+            className="w-28 rounded-xl border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none placeholder:text-neutral-600 focus:border-neutral-500"
           />
           <input
             type="text"
@@ -105,12 +105,12 @@ function SpacesContent() {
             defaultValue={tag}
             key={`tag-${tag}`}
             onChange={(e) => updateFilters({ tag: e.target.value.trim() })}
-            className="w-32 rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-400"
+            className="w-32 rounded-xl border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none placeholder:text-neutral-600 focus:border-neutral-500"
           />
           <select
             value={sort}
             onChange={(e) => updateFilters({ sort: e.target.value })}
-            className="rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-400"
+            className="rounded-xl border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none focus:border-neutral-500"
           >
             <option value="recommended">Рекомендуемые</option>
             <option value="price_asc">Сначала дешевле</option>
@@ -119,11 +119,11 @@ function SpacesContent() {
         </div>
 
         {loading ? (
-          <p className="mt-8 text-neutral-500">Загрузка...</p>
+          <p className="mt-8 text-neutral-700">Загрузка...</p>
         ) : spaces.length === 0 ? (
-          <p className="mt-8 text-neutral-600">
+          <p className="mt-8 text-neutral-800">
             Ничего не найдено. Попробуй другие фильтры или{" "}
-            <Link href="/add" className="font-medium text-neutral-900 underline">
+            <Link href="/add" className="font-semibold text-neutral-900 underline">
               добавь кабинет
             </Link>
             .
@@ -145,14 +145,14 @@ function SpacesContent() {
                         className="h-full w-full object-cover"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center text-neutral-400">
+                      <div className="flex h-full w-full items-center justify-center text-neutral-600">
                         Нет фото
                       </div>
                     )}
                   </div>
                   <div className="p-4">
                     <p className="font-semibold text-neutral-900">{space.title}</p>
-                    <p className="mt-1 text-sm text-neutral-600">{space.metro}</p>
+                    <p className="mt-1 text-sm text-neutral-800">{space.metro}</p>
                     <p className="mt-2 text-lg font-semibold text-neutral-900">
                       {space.price_per_hour} ₽/час
                     </p>
@@ -161,7 +161,7 @@ function SpacesContent() {
                         {space.tags.slice(0, 3).map((t) => (
                           <span
                             key={t}
-                            className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-700"
+                            className="rounded-full bg-neutral-200 px-2 py-0.5 text-xs text-neutral-800"
                           >
                             {t}
                           </span>
@@ -173,7 +173,7 @@ function SpacesContent() {
                 <div className="flex gap-2 border-t border-neutral-100 p-4">
                   <Link
                     href={`/spaces/${space.id}`}
-                    className="flex-1 rounded-xl border border-neutral-300 py-2 text-center text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+                    className="flex-1 rounded-xl border border-neutral-400 py-2 text-center text-sm font-medium text-neutral-800 hover:bg-neutral-50"
                   >
                     Подробнее
                   </Link>
@@ -195,7 +195,7 @@ function SpacesContent() {
 
 export default function SpacesPage() {
   return (
-    <Suspense fallback={<p className="flex min-h-[50vh] items-center justify-center text-neutral-500">Загрузка...</p>}>
+    <Suspense fallback={<p className="flex min-h-[50vh] items-center justify-center text-neutral-700">Загрузка...</p>}>
       <SpacesContent />
     </Suspense>
   );

@@ -33,7 +33,7 @@ export default function LoginPage() {
         <h1 className="text-2xl font-semibold tracking-tight text-neutral-900">
           Вход
         </h1>
-        <p className="mt-1 text-sm text-neutral-600">
+        <p className="mt-1 text-sm text-neutral-800">
           Войди, чтобы размещать кабинеты и связываться с владельцами.
         </p>
 
@@ -42,7 +42,7 @@ export default function LoginPage() {
           className="mt-8 space-y-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
         >
           <div>
-            <label htmlFor="login-email" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="login-email" className="block text-sm font-medium text-neutral-800">
               Email
             </label>
             <input
@@ -57,7 +57,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label htmlFor="login-password" className="block text-sm font-medium text-neutral-700">
+            <label htmlFor="login-password" className="block text-sm font-medium text-neutral-800">
               Пароль
             </label>
             <input
@@ -85,9 +85,9 @@ export default function LoginPage() {
             </div>
           )}
 
-          <p className="text-center text-sm text-neutral-600">
+          <p className="text-center text-sm text-neutral-800">
             Нет аккаунта?{" "}
-            <Link href="/signup" className="font-medium text-neutral-900 hover:underline">
+            <Link href="/signup" className="font-semibold text-neutral-900 hover:underline">
               Зарегистрироваться
             </Link>
           </p>
